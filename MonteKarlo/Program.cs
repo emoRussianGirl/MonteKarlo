@@ -15,22 +15,27 @@
             switch (num)
             {
                 case 1:
+
                     n = 100000;
                     Console.WriteLine("Число повторений: " + n);
+
                     s = Kryg(n);
                     Console.WriteLine("Результат pi = " + s);
                     Console.WriteLine("Точное pi = " + Math.PI);
+
                     break;
 
                 case 2:
                     n = 100000;
                     Console.WriteLine("Число повторений: " + n);
+
                     Zadanie1(n);
                     Zadanie2(n);
                     Zadanie3(n);
                     Zadanie4(n);
                     Zadanie5(n);
                     Zadanie6(n);
+
                     break;
             }
 
@@ -42,16 +47,20 @@
             }
         }
     }
+
     static double Kryg(int n)
     {
+        //Создание класса генератора случайных чисел
         Random rnd = new Random();
         double k = 0;
 
         for (int i = 0; i < n; i++)
         {
+            //Получение случайных чисел типа double и умножение их на 2
             double x = (rnd.NextDouble() * 2);
             double y = (rnd.NextDouble() * 2);
 
+            //Math.Pow - возведение в степень
             if (Math.Pow(x - 1, 2) + Math.Pow(y - 1, 2) <= 1)
             {
                 k++;
